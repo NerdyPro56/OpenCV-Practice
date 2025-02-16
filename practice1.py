@@ -7,6 +7,10 @@ image = cv2.imread(r"C:\Users\tauro\Downloads\0052_png_jpg.rf.0c6953cf399fc96860
 # Convert the image to grayscale
 gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
+sliceimg = image[0:100, 0:100]
+dup = image.copy()
+dup[0:100, 0:100] = sliceimg
+cv2.imshow('Slice', dup)
 # Perform edge detection using the Canny algorithm
 edges = cv2.Canny(gray_image, 100, 200)
 
